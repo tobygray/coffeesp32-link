@@ -16,6 +16,7 @@
 
 #include <BLEAdvertisedDevice.h>
 
+#include <WString.h>
 #include <string>
 
 // Forward Declare
@@ -31,6 +32,10 @@ public:
   //
   // Should be called once when the MQTT connection is established.
   void setupMqtt();
+
+private:
+  // Called when the MQTT command state changes for the switch representing the machine.
+  void switchCommand(const String & payload);
  
 private:
   EspMQTTClient & m_mqtt_client;
