@@ -10,3 +10,5 @@ Requires [Arduino IDE](https://www.arduino.cc/) with ESP32 board supported, adde
 Uses these libraries:
 * https://github.com/plapointe6/EspMQTTClient v1.8.0
 * https://pubsubclient.knolleary.net/ v2.8.0
+
+Having BLE and MQTT inside the app makes it quite large, try one of the no-OTA flash schemes (such as a 2MB APP one).
