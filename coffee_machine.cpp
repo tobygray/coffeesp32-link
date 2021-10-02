@@ -68,7 +68,10 @@ CoffeeMachine::CoffeeMachine(EspMQTTClient & mqtt_client, BLEAdvertisedDevice & 
 {
    m_ble_client->setClientCallbacks(this);
    ESP_LOGI(LOG_TAG, "Connecting..");
-   m_ble_client->connect(&device);
+   while(!m_ble_client->connect(&device)) {
+     ESP_LOGI(LOG_TAG, "Failed to connect, retrying");
+     delay(100);
+   }
    ESP_LOGI(LOG_TAG, "Getting service...");
    m_ble_service = m_ble_client->getService(kServiceUUID);
    if (!m_ble_service)
