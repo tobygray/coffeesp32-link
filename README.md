@@ -12,3 +12,7 @@ Uses these libraries:
 * https://pubsubclient.knolleary.net/ v2.8.0
 
 Having BLE and MQTT inside the app makes it quite large, try one of the no-OTA flash schemes (such as a 2MB APP one).
+
+Useful links:
+* https://github.com/nkolban/esp32-snippets/blob/master/cpp_utils/BLEDevice.cpp
+* https://github.com/manekinekko/cafy/blob/main/src/commands.ts
